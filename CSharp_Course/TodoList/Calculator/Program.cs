@@ -19,20 +19,20 @@ namespace Calculator
             Console.WriteLine("What do you want to do with those numbers?\n[A]dd\n[S]ubtract\n[M]ultiply");
             while (true) 
             {
-                var userInput = Console.ReadLine().ToLower();
-                if (userInput == "A" || userInput == "a")
+                var userInput = Console.ReadLine().ToUpper();
+                if (userInput == "A")
                 {
                     var result = inputIntFirstNum + inputIntSecondNum;
                     Console.WriteLine($"{inputIntFirstNum} + {inputIntSecondNum} = {result}");
                     break;
                 }
-                else if (userInput == "S" || userInput == "s") 
+                else if (userInput == "S") 
                 {
                     var result = inputIntFirstNum - inputIntSecondNum;
                     Console.WriteLine($"{inputIntFirstNum} - {inputIntSecondNum} = {result}");
                     break;
                 }
-                else if (userInput == "M" || userInput == "m")
+                else if (userInput == "M")
                 {
                     var result = inputIntFirstNum * inputIntSecondNum;
                     Console.WriteLine($"{inputIntFirstNum} * {inputIntSecondNum} = {result}");
