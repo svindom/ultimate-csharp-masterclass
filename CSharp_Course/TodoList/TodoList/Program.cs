@@ -10,11 +10,19 @@
             Console.WriteLine("[R]emove a TODO");
             Console.WriteLine("[E]xit");
 
-            string userChoice = Console.ReadLine();
-            Console.WriteLine("User input " + userChoice);
-            userChoice = "ABC";
+            var userChoise = Console.ReadLine();
+
+            if (userChoise == "S")
+            {
+                PrintSelectedOption("See al TODOs");
+            }
 
             Console.ReadKey();
+
+            void PrintSelectedOption (string selectedOption)
+            {
+                Console.WriteLine("Selected option: " + selectedOption);
+            }
         }
     }
 }
