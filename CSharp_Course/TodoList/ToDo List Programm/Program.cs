@@ -36,6 +36,21 @@ while (!shallExit)
 }
 Console.ReadKey();
 
+void SeeAllToDos()
+{
+    if (todos.Count == 0)
+    {
+        ShowNoTodosMessage();
+        return;
+    }
+
+    for (int i = 0; i < todos.Count; i++)
+    {
+        Console.WriteLine("Your TODO List:");
+        Console.WriteLine($"{i + 1}. {todos[i]}");
+    }
+
+}
 
 
 void AddToDo()
@@ -63,27 +78,13 @@ void AddToDo()
     }
 }
 
-void SeeAllToDos()
-{
-    if (todos.Count == 0) 
-    {
-        Console.WriteLine("No TODOs have been added yet");
-    }
-    else 
-    {
-        for (int i = 0; i < todos.Count; i++) 
-        {          
-            Console.WriteLine("Your TODO List:");
-            Console.WriteLine($"{i + 1}. {todos[i]}");
-        }
-    }
-}
+
 
 void RemoveToDo()
 {
     if (todos.Count == 0)
     {
-        Console.WriteLine("No TODOs have been added yet");
+        ShowNoTodosMessage();
         return;
     }
     bool isIndexValid = false;
@@ -113,6 +114,10 @@ void RemoveToDo()
     }
 }
 
+static void ShowNoTodosMessage()
+{
+    Console.WriteLine("No TODOs have been added yet");
+}
 
 
 
