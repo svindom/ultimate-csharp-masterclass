@@ -14,6 +14,7 @@ while (!shallExit)
     Console.WriteLine("Press \'A\' to add a new TODO");
     Console.WriteLine("Press \'R\' to remove a TODO");
     Console.WriteLine("Press \'E\' to exit the program");
+    Console.WriteLine();
 
     string userInput = Console.ReadLine().ToUpper();
 
@@ -26,7 +27,7 @@ while (!shallExit)
             AddNewTODO();
             break;
         case "R":
-            Console.WriteLine("To Remove a TODO");
+            RemoveTODO();
             break;
         case "E":
             Console.WriteLine("Tap any key to close");
@@ -65,23 +66,63 @@ void AddNewTODO()
 
         if (addNewTODO == "")
         {
-            Console.WriteLine("The discription cannot be empty.");
+            Console.WriteLine("The description cannot be empty.");
             continue;
         }
         else if (myToDo.Contains(addNewTODO))
         {
             Console.WriteLine("You already have this TODO");
         }
-        else 
+        else
         {
             myToDo.Add(addNewTODO);
             ifAddedTODO = true;
         }
     }
+}
 
-   
+void RemoveTODO()
+{
+    if (myToDo.Count == 0)
+    {
+        Console.WriteLine("No TODOs have been added yet");
+        return;
+    }
+    bool isIndexValid = false;
+    while (!isIndexValid)
+    {
+        Console.WriteLine("Please choose the index of a TODO you want to remove.");
+        SeeAllTODO();
+        string userInput = Console.ReadLine();
+
+        if (userInput == "")
+        {
+            Console.WriteLine("The description cannot be empty.");
+            continue;
+        }
+        if (int.TryParse(userInput, out int index) && index >=1 && index<= myToDo.Count)
+        {
+            int indexToBeRemoved = index -1;
+            string aTODOtoBeRemoved = myToDo[indexToBeRemoved];
+            myToDo.Remove(aTODOtoBeRemoved);
+            isIndexValid = true;
+            Console.WriteLine($"Your {aTODOtoBeRemoved} has been removed");
+        }
+        else
+        {
+            Console.WriteLine("The given index is not valid");
+        }
+    }
+
 
 }
+
+
+
+
+
+
+
 
 
 
