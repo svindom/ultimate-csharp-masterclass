@@ -1,7 +1,8 @@
-﻿
+﻿var appointmentTwoWeeksFromNow = new MedicalAppointment("Bob Smith", 14);
+var appointmentOneWeeksFromNow = new MedicalAppointment("Margaret Smith");
 
 
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 Console.ReadKey();
 
