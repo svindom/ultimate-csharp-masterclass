@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LimitationOfFields", "Limit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Properties", "Properties\Properties.csproj", "{05A7B33F-67F2-4075-9B13-62202E9E9054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticMethodsAndClasses", "StaticMethodsAndClasses\StaticMethodsAndClasses.csproj", "{AE24B2BE-0E36-49BC-9489-DC2EEA1FEC9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticMethodsAndClasses", "StaticMethodsAndClasses\StaticMethodsAndClasses.csproj", "{AE24B2BE-0E36-49BC-9489-DC2EEA1FEC9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicFieldsAndProperties", "PublicFieldsAndProperties\PublicFieldsAndProperties.csproj", "{AACB6A12-5978-45AF-A8AC-64976E870941}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{AE24B2BE-0E36-49BC-9489-DC2EEA1FEC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE24B2BE-0E36-49BC-9489-DC2EEA1FEC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE24B2BE-0E36-49BC-9489-DC2EEA1FEC9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AACB6A12-5978-45AF-A8AC-64976E870941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACB6A12-5978-45AF-A8AC-64976E870941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACB6A12-5978-45AF-A8AC-64976E870941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACB6A12-5978-45AF-A8AC-64976E870941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
