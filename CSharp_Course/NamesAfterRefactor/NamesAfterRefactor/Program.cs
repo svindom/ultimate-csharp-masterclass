@@ -1,10 +1,12 @@
 ﻿Names names = new Names();
-string path = names.BuildFilePath();
+string path = new NamesFilePathBuilder().BuildFilePath();
+StringsTextualRepository stringsTextualRepository = new StringsTextualRepository();
 
 if (File.Exists(path))
 {
     Console.WriteLine("Names file already exists. Loading names");
-    names.ReadFromTextFile();
+    List<string> stringsFromFile = stringsTextualRepository.Read(path); 
+    names.AddNames(stringsFromFile);
 }
 else
 {
@@ -16,10 +18,10 @@ else
     names.AddName("123 definitely nat a valid name");
 
     Console.WriteLine("Saving names to a file");
-    names.WriteToTextFile();
+    stringsTextualRepository.Write(path, names.All);
 }
 
-Console.WriteLine(names.Format());
+Console.WriteLine(new NamesFormatter().Format(names.All));
 Console.ReadLine();
 
 
@@ -27,47 +29,64 @@ Console.ReadLine();
 
 class NamesValidator
 {
-    public bool IsValidName(string name)
+    public bool IsValid(string name)
     {
         return name.Length >= 2 && name.Length < 25 && char.IsUpper(name[0]) && name.All(char.IsLetter);
     }
 }
 
-class Names
+class StringsTextualRepository
 {
-    private List<string> _names { get; } = new List<string>();
-    private readonly NamesValidator _namesValidator = new NamesValidator();
+    private static readonly string Separator = Environment.NewLine;
 
-    public void AddName(string name)
+    public List<string> Read(string filePath)
     {
-        if (_namesValidator.IsValidName(name))
-        {
-            _names.Add(name);
-        }
+        string fileContents = File.ReadAllText(filePath);
+        return fileContents.Split(Separator).ToList();
     }
 
-    public void ReadFromTextFile()
+    public void Write(string filePath, List<string> strings)
     {
-        string fileContents = File.ReadAllText(BuildFilePath());
-        List<string> namesFromFile = fileContents.Split(Environment.NewLine).ToList();
-        foreach (string name in namesFromFile) 
+        File.WriteAllText(filePath, string.Join(Separator, strings));
+    }
+
+
+}
+
+class NamesFilePathBuilder
+{
+    public string BuildFilePath()
+    {
+        return "names.txt";
+    }
+}
+
+class NamesFormatter
+{
+    public string Format(List<string> names)
+    {
+        return string.Join(Environment.NewLine, names);
+    }
+}
+
+class Names
+{
+    public List<string> All { get; } = new List<string>();
+    private readonly NamesValidator _namesValidator = new NamesValidator();
+
+    public void AddNames(List<string> stringsFromFile)
+    {
+        foreach (var name in stringsFromFile)
         {
             AddName(name);
         }
     }
 
-    public void WriteToTextFile() 
+    public void AddName(string name)
     {
-        File.WriteAllText(BuildFilePath(), Format());
-    }
-
-    public string BuildFilePath()
-    {
-        return "names.txt";
-    }
-
-    public string Format()
-    {
-        return string.Join(Environment.NewLine, _names);
+        if (_namesValidator.IsValid(name))
+        {
+            All.Add(name);
+        }
     }
 }
