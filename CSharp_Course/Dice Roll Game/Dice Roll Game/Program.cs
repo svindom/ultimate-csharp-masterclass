@@ -20,33 +20,42 @@ void PlayDiceGame()
 
 void PlayThreeAttempts()
 {
-    int computerRandomNumber = GetRandomValue();
+    //int computerRandomNumber = GetRandomValue();
+    //int userGuessTwo = 0;
+    //bool isCorrectGuess = false;
 
-    for (int i = 0; i < 3; i++)
-    {
-        int userGuess = ValidateUserInput();
-        Console.WriteLine($"Attempt {i + 1}/3");
+    //for (int turn = 0; turn <=3; turn++)
+    //{
+    //    int userGuess = ValidateUserInput();
+    //    Console.WriteLine($"Attempt {turn + 1}/3");
 
-        if (userGuess == computerRandomNumber)
-        {
-            Console.WriteLine("Hooray! You win!");
-            Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine($"Your guess was: {userGuess}");
-            Console.WriteLine($"The nubmber on a dice was: {computerRandomNumber}");
-            return;
-        }
-        else if (i < 3)
-        {
-            Console.WriteLine("Ouch! You guessed wrong");
-            Console.WriteLine("---------------------------------------------------------");
-        }
-        else if (i == 3)
-        {
-            Console.WriteLine("Oh noooo, my dear looser. You have loose!");
-            Console.WriteLine($"Your guess was: {userGuess}");
-            Console.WriteLine($"The nubmber on a dice was: {computerRandomNumber}");
-        }
-    }
+    //    if (userGuess == computerRandomNumber)
+    //    {
+    //        isCorrectGuess = true;
+    //        userGuess = userGuessTwo;
+
+            
+    //    }
+    //    else if (turn < 3) 
+    //    {
+    //        Console.WriteLine("Ouch! You guessed wrong");
+    //        Console.WriteLine("---------------------------------------------------------");
+    //    }
+    //}
+
+    //if (isCorrectGuess)
+    //{
+    //    Console.WriteLine("Hooray! You win!");
+    //    Console.WriteLine("---------------------------------------------------------");
+    //    Console.WriteLine($"Your guess was: {userGuess}");
+    //    Console.WriteLine($"The number on the dice was: {computerRandomNumber}");
+    //}
+    //else
+    //{
+    //    Console.WriteLine("Oh noooo, my dear looser. You have lost!");
+    //    Console.WriteLine($"Your guess was: {userGuess}");
+    //    Console.WriteLine($"The number on the dice was: {computerRandomNumber}");
+    //}
 }
 
 int GetRandomValue()
