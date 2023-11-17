@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRolGameTeacherVersion", "DiceRolGameTeacherVersion\DiceRolGameTeacherVersion.csproj", "{AD46BD5B-85CE-4AA6-AFA3-9F4AA4267826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumsLearning", "EnumsLearning\EnumsLearning.csproj", "{EB145557-E67E-4391-AC59-DD34940CDF4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD46BD5B-85CE-4AA6-AFA3-9F4AA4267826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD46BD5B-85CE-4AA6-AFA3-9F4AA4267826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD46BD5B-85CE-4AA6-AFA3-9F4AA4267826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD46BD5B-85CE-4AA6-AFA3-9F4AA4267826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB145557-E67E-4391-AC59-DD34940CDF4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB145557-E67E-4391-AC59-DD34940CDF4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB145557-E67E-4391-AC59-DD34940CDF4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB145557-E67E-4391-AC59-DD34940CDF4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {962A2ED9-310F-409D-8BFB-A86E2796A387}
+	EndGlobalSection
+EndGlobal
