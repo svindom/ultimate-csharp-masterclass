@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism_Inheritance_Interfaces", "Polymorphism_Inheritance_Interfaces\Polymorphism_Inheritance_Interfaces.csproj", "{9C73D4D7-E69F-4409-AEE3-546A59ADA686}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism_Inheritance_Interfaces", "Polymorphism_Inheritance_Interfaces\Polymorphism_Inheritance_Interfaces.csproj", "{9C73D4D7-E69F-4409-AEE3-546A59ADA686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualOverride", "OverridingMembersFromClass\VirtualOverride.csproj", "{A8E1EFDD-934B-430F-8EB9-5B1F8634C0EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMethods Practise", "VirtualMethods Practise\VirtualMethods Practise.csproj", "{E24784EA-C1CB-42C7-B584-9B81A03D851B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{9C73D4D7-E69F-4409-AEE3-546A59ADA686}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C73D4D7-E69F-4409-AEE3-546A59ADA686}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C73D4D7-E69F-4409-AEE3-546A59ADA686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E1EFDD-934B-430F-8EB9-5B1F8634C0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E1EFDD-934B-430F-8EB9-5B1F8634C0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E1EFDD-934B-430F-8EB9-5B1F8634C0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E1EFDD-934B-430F-8EB9-5B1F8634C0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E24784EA-C1CB-42C7-B584-9B81A03D851B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E24784EA-C1CB-42C7-B584-9B81A03D851B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E24784EA-C1CB-42C7-B584-9B81A03D851B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E24784EA-C1CB-42C7-B584-9B81A03D851B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
