@@ -19,8 +19,6 @@ foreach(Ingredient ingredient in ingredients)
     Console.WriteLine(ingredient.Name);
 }
 
-
-
 Console.ReadKey();
 
 public class Pizza
