@@ -1,5 +1,8 @@
-﻿CookiesRecipesApp cookiesRecipesApp = new CookiesRecipesApp( new RecipesRepository(), new RecipesConsoleUserInteraction());
-cookiesRecipesApp.Run();
+﻿using CookiesCookbook.Recipes;
+using CookiesCookbook.Recipes.Ingredients;
+
+CookiesRecipesApp cookiesRecipesApp = new CookiesRecipesApp( new RecipesRepository(), new RecipesConsoleUserInteraction());
+cookiesRecipesApp.Run("recipes.txt");
 
 Console.ReadKey();
 
@@ -14,9 +17,9 @@ public class CookiesRecipesApp
         _recipesUserInteraction = recipesUserInteraction;
     }
 
-    public void Run()
+    public void Run(string filePath)
     {
-        var allRecipes = _recipesRepository.Read(filePath);
+        List<Recipe> allRecipes = _recipesRepository.Read(filePath);
         _recipesUserInteraction.PrintExistingRecipes(allRecipes);
 
         _recipesUserInteraction.PromtToCreateRecipe();
@@ -25,7 +28,7 @@ public class CookiesRecipesApp
 
         if (ingredients.Count > 0)
         {
-            var recipes = new Recipe(ingredients);
+            Recipe recipes = new Recipe(ingredients);
             allRecipes.Add(recipe);
             _recipesRepository.Write(filePath, allRecipes);
 
@@ -45,7 +48,7 @@ public interface IRecipesUserInteraction
 {
     public void ShowMessage(string message);
     public void Exit();
-
+    void PrintExistingRecipes(IEnumerable<Recipe> allRecipes);
 }
 
 public class RecipesConsoleUserInteraction : IRecipesUserInteraction
@@ -61,14 +64,39 @@ public class RecipesConsoleUserInteraction : IRecipesUserInteraction
         Console.WriteLine("Press any key to close the app.");
         Console.ReadKey();
     }
+
+    public void PrintExistingRecipes(IEnumerable<Recipe> allRecipes)
+    {
+        if(allRecipes.Count() > 0)
+        {
+            Console.WriteLine($"Existing recipes are: {Environment.NewLine}");
+
+            int counter = 1;
+            foreach(Recipe recipe in allRecipes)
+            {
+                Console.WriteLine($"*****{counter}*****");
+                Console.WriteLine(recipe);
+                Console.WriteLine();
+                counter++;
+            }
+        }
+    }
 }
 
 
 public interface IRecipesRepository
 {
-
+    List<Recipe> Read(string filePath);
 }
 
 public class RecipesRepository : IRecipesRepository
 {
+    public List<Recipe> Read(string filePath)
+    {
+        return new List<Recipe>
+        {
+            new Recipe(new List<Ingredient>{new WheatFlour(), new Butter(), new Sugar()}),
+            new Recipe(new List<Ingredient>{new CocoaPowder(), new SpeltFlour(), new Cinnamom()})
+        };
+    }
 }
