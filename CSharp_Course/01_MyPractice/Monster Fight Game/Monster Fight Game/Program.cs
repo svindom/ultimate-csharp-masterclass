@@ -1,4 +1,8 @@
-﻿
+﻿MyMonster myMonster = new MyMonster("Wed", 100);
+
+Console.WriteLine($"My monster name: {myMonster.Name}");
+Console.WriteLine($"My monster health: {myMonster.Health}");
+
 
 Console.ReadKey();
 
@@ -9,16 +13,18 @@ public enum GameResult
     Draw
 }
 
-public class KrocksMonster
+public class Monster
 {
-    public string Name { get; private set; }
+    public string Name { get; set; }
     public int Health { get; set; }
 
-    public KrocksMonster (int health)
+    
+    public Monster(string name, int health)
     {
-        Name = "Krocks";
+        Name = name;
         Health = health;
     }
+    
     public int Attack()
     {
         Random random = new Random();
@@ -26,20 +32,19 @@ public class KrocksMonster
     }
 }
 
-public class MyMonster
+public class KrocksMonster : Monster
 {
-    public string Name { get; set; }
-    public int Health { get; set; }
-
-    public MyMonster(string name, int health)
+    public KrocksMonster(int health) :base("Krocks", health)
     {
-        Name = name;
-        Health = health;
+        
     }
-    public int Attack()
+}
+
+public class MyMonster : Monster
+{
+    public MyMonster(string name, int health) : base(name, health)
     {
-        Random random = new Random();
-        return random.Next(10, 21);
+
     }
 }
 
@@ -103,7 +108,7 @@ public class Boosters
     public void GetBoostersInfo()
     {
         Console.WriteLine("You can additionally use one of the three provided boosters");
-        Console.WriteLine("Press \'1\' to launch an additional attack on your Enemy, causing damage withina range of 5 to 10 units.");
+        Console.WriteLine("Press \'1\' to launch an additional attack on your Enemy, causing damage within a range of 5 to 10 units.");
         Console.WriteLine($"Press \'2\' to heal your {_myMonster.Name} by {Heal} units.");
         Console.WriteLine($"Press \'3\' to reduce both your {_myMonster.Name} and Krocks health within a range of 10 to 25 units.");
         Console.WriteLine($"Press \'s\' to skip this.");
