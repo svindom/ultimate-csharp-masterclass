@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-public class KrocksMonster : Monster
+﻿public class KrocksMonster : Monster
 {
     public KrocksMonster()
     {

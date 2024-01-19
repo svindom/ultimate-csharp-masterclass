@@ -1,8 +1,4 @@
 ﻿
-
-
-
-
 public class GamePlay
 {
     private Boosters _boosters;

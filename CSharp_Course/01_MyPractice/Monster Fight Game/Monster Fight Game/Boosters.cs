@@ -1,16 +1,7 @@
-﻿
-
-
-
-
-public class Boosters
+﻿public class Boosters
 {
     MyMonster _myMonster;
     KrocksMonster _krocksMonster;
-
-    private string _myMonsterName;
-    private string _krockMonsterName;
-
     private const int Heal = 10;
 
     // Stateful properties for MyMonster's boosters
@@ -25,15 +16,10 @@ public class Boosters
     private bool isKrocksBooster3Used = true;
     private int krocksBoosterCounter = 0;
 
-
     public Boosters(MyMonster myMonster, KrocksMonster krocksMonster)
     {
         _myMonster = myMonster;
         _krocksMonster = krocksMonster;
-
-        _myMonsterName = _myMonster.Name;
-        _krockMonsterName = _krocksMonster.Name;    
-
     }
 
     public void GetBooster()
@@ -56,7 +42,7 @@ public class Boosters
                         enemyDamage = random.Next(5, 11);
                         _krocksMonster.Health -= enemyDamage;
                         Console.WriteLine();
-                        Console.WriteLine($"Your {_myMonsterName} additionally attacks Krocks by {enemyDamage}");
+                        Console.WriteLine($"Your {_myMonster.Name} additionally attacks Krocks by {enemyDamage}");
                         isMyBooster1Used = false;
                     }
                     break;
@@ -67,7 +53,7 @@ public class Boosters
                             myBoosterCounter++;
                             _myMonster.Health += Heal;
                             Console.WriteLine();
-                            Console.WriteLine($"Your {_myMonsterName} has been healed by {Heal} units");
+                            Console.WriteLine($"Your {_myMonster.Name} has been healed by {Heal} units");
                             isMyBooster2Used = false;
                         }
                     }
@@ -81,7 +67,7 @@ public class Boosters
                         _krocksMonster.Health -= enemyDamage;
                         _myMonster.Health -= myMonsterDamage;
                         Console.WriteLine();
-                        Console.WriteLine($"Your {_myMonsterName} health reduced by {myMonsterDamage}");
+                        Console.WriteLine($"Your {_myMonster.Name} health reduced by {myMonsterDamage}");
                         Console.WriteLine($"Enemy health reduced by {enemyDamage}");
                         isMyBooster3Used = false;
                     }
@@ -105,19 +91,20 @@ public class Boosters
         {
             Console.WriteLine("You have used all boosters");
         }
-        
+
 
     }
+
 
     public void GetKrocksBooster()
     {
         Random random = new Random();
-       
+
 
         int enemyDamage;
         int myMonsterDamage;
 
-        if(krocksBoosterCounter < 3)
+        if (krocksBoosterCounter < 3)
         {
             Console.WriteLine();
             Console.WriteLine("Krocks is using a booster:");
@@ -133,7 +120,7 @@ public class Boosters
                             myMonsterDamage = random.Next(5, 11);
                             _myMonster.Health -= myMonsterDamage;
                             Console.WriteLine();
-                            Console.WriteLine($"{_krockMonsterName} additionally attacks your {_myMonsterName} by {myMonsterDamage}");
+                            Console.WriteLine($"{_krocksMonster.Name} additionally attacks your {_myMonster.Name} by {myMonsterDamage}");
                             isKrocksBooster1Used = false;
                         }
                         break;
@@ -146,7 +133,7 @@ public class Boosters
                             krocksBoosterCounter++;
                             _krocksMonster.Health += Heal;
                             Console.WriteLine();
-                            Console.WriteLine($"{_krockMonsterName} has been healed by {Heal} units");
+                            Console.WriteLine($"{_krocksMonster.Name} has been healed by {Heal} units");
                             isKrocksBooster2Used = false;
                         }
                         break;
@@ -162,7 +149,7 @@ public class Boosters
                             _krocksMonster.Health -= enemyDamage;
                             _myMonster.Health -= myMonsterDamage;
                             Console.WriteLine();
-                            Console.WriteLine($"Your {_myMonsterName} health reduced by {myMonsterDamage}");
+                            Console.WriteLine($"Your {_myMonster.Name} health reduced by {myMonsterDamage}");
                             Console.WriteLine($"Enemy health reduced by {enemyDamage}");
                             isKrocksBooster3Used = false;
                         }
@@ -171,13 +158,14 @@ public class Boosters
                 case 4:
                     {
                         Console.WriteLine();
-                        Console.WriteLine($"{_krockMonsterName} is skiping to use a booster");
+                        Console.WriteLine($"{_krocksMonster.Name} is skiping to use a booster");
                         break;
                     }
             }
         }
-        
+
     }
+
 
     public int GetKrocksHealth()
     {
@@ -185,9 +173,11 @@ public class Boosters
     }
 
     public int GetMyMonsterHealth()
-    { 
-        return _myMonster.Health; 
+    {
+        return _myMonster.Health;
     }
+
+
 
     public void GetBoostersInfo()
     {
@@ -199,16 +189,18 @@ public class Boosters
         }
         if (isMyBooster2Used)
         {
-            Console.WriteLine($"Press \'2\' to heal your {_myMonsterName} by {Heal} units.");
+            Console.WriteLine($"Press \'2\' to heal your {_myMonster.Name} by {Heal} units.");
 
         }
         if (isMyBooster3Used)
         {
-            Console.WriteLine($"Press \'3\' to reduce both your {_myMonsterName} and Krocks health within a range of 10 to 25 units.");
+            Console.WriteLine($"Press \'3\' to reduce both your {_myMonster.Name} and Krocks health within a range of 10 to 25 units.");
         }
         Console.WriteLine($"Press \'s\' to skip this.");
         Console.WriteLine();
     }
 }
+
+
 
 
