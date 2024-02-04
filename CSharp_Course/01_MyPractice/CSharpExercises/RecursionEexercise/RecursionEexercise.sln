@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativeVersion", "RecursionEexercise\IterativeVersion.csproj", "{340C3154-6DB6-4225-9815-8AB483C2BFA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursionVersion", "Recursion\RecursionVersion.csproj", "{1A34F6A8-8F62-4163-90D9-78AE52438D01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{340C3154-6DB6-4225-9815-8AB483C2BFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340C3154-6DB6-4225-9815-8AB483C2BFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340C3154-6DB6-4225-9815-8AB483C2BFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340C3154-6DB6-4225-9815-8AB483C2BFA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A34F6A8-8F62-4163-90D9-78AE52438D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A34F6A8-8F62-4163-90D9-78AE52438D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A34F6A8-8F62-4163-90D9-78AE52438D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A34F6A8-8F62-4163-90D9-78AE52438D01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2420B3EE-7F40-4616-B8E9-18740EF02C50}
+	EndGlobalSection
+EndGlobal
